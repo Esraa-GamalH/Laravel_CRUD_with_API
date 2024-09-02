@@ -23,8 +23,8 @@
     <table class="table table-success table-striped mt-5 m-auto text-center">
         <tr>
             <th>Id</th>
-            <th class="w-25">Title</th>
-            <th>Slug</th>
+            <th style="width: 200px">Title</th>
+            <th style="width: 200px">Slug</th>
             <th>Posted By</th>
             <th>Created At</th>
             <th>Image</th>
