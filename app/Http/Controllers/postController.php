@@ -101,6 +101,7 @@ class postController extends Controller
 
         if($request->hasFile('image')){
             # delete old_image
+            // Storage::disk('posts_images')->delete($image_path);
             $image = $request->file('image');
             $image_path=$image->store("images", 'posts_images');
         }
