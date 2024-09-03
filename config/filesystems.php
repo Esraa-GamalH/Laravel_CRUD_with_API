@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -55,18 +55,18 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-        'posts_images'=>[
+        'posts_images' => [
             "driver" => "local",
             'root' => public_path('images/posts/images'),
             'visibility' => 'public',
-            'url' => env('APP_URL').'/public',
+            'url' => env('APP_URL') . '/public',
             'throw' => false,
         ],
-        "users_avatars"=>[
+        "users_avatars" => [
             "driver" => "local",
             'root' => public_path('images/users'),
             'visibility' => 'public',
-            'url' => env('APP_URL').'/public',
+            'url' => env('APP_URL') . '/public',
             'throw' => false,
         ]
 

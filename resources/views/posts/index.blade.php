@@ -25,7 +25,7 @@
             <th>Id</th>
             <th style="width: 200px">Title</th>
             <th style="width: 200px">Slug</th>
-            <th>Posted By</th>
+            <th>Author</th>
             <th>Created At</th>
             <th>Image</th>
             <th style="width: 200px">Actions</th>
