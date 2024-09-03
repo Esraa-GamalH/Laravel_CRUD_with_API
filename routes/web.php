@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\AuthorController;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Laravel\Socialite\Facades\Socialite;
 
 
 // Route::get('/posts', [postController::class, "index"])->name("posts.index");
@@ -30,4 +33,28 @@ Route::get('/', function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/******************Login with Github */
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+})->name("github.login");
+
+Route::get('/auth/callback', function () {
+    $githubUser = Socialite::driver('github')->user();
+    $user = User::updateOrCreate([
+        'github_id' => $githubUser->id,
+    ], [
+        'name' => $githubUser->name,
+        'email' => $githubUser->email,
+        'password' => $githubUser->token,
+        'image' => $githubUser->getAvatar(),
+        'github_token' => $githubUser->token,
+        'github_refresh_token' => $githubUser->refreshToken,
+    ]);
+    Auth::login($user);
+
+    return redirect('/home');
+});
 

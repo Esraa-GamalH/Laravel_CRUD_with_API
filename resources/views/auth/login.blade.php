@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="login_with_github text-center mt-5" style="border-top: 2px solid rgba(0, 0, 0, 0.21)">
+                        <a href="{{ route("github.login") }}" class="btn btn-success m-4"><i class="fa-brands fa-github"></i> Login With Github</a>
+                    </div>
                 </div>
             </div>
         </div>
